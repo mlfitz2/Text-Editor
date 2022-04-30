@@ -53,13 +53,13 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.css$/,  //this code also looks for a .css file and adds this into the bundle.js file
+          test: /\.css$/i,  //this code also looks for a .css file and adds this into the bundle.js file
           use: ['style-loader', 'css-loader'],  // additional modules for converting the css into js
         },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i, // searches for image files with these extensions to include
-          type: 'asset/resource'
-        },
+        // {
+        //   test: /\.(png|svg|jpg|jpeg|gif)$/i, // searches for image files with these extensions to include
+        //   type: 'asset/resource'
+        // },
         {
           test: /\.m?js$/,  // looks for .js files
           exclude: /(node_modules|bower_components)/,  // ignores these files

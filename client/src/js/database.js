@@ -24,7 +24,7 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Use the .add() method on the store and pass in the content.
-  const request = store.add({ content: content });
+  const request = store.put({ id: 1, value: content });
 
   // Get confirmation of the request.
   const result = await request;
@@ -49,8 +49,11 @@ export const getDb = async () => {
 
   // Get confirmation of the request.
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  result
+    ? console.log(':rocket: - data retrieved from the database', result.value)
+    : console.log(':rocket: - data not found in the database');
+  // Check if a variable is defined and if it is, return it. See MDN Docs on Optional Chaining (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+  return result?.value;
 }
 
 initdb();
