@@ -1,4 +1,4 @@
-const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
+// const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
 const { StaleWhileRevalidate, CacheFirst } = require('workbox-strategies'); //
 const { registerRoute } = require('workbox-routing'); // 
 const { CacheableResponsePlugin } = require('workbox-cacheable-response'); //
